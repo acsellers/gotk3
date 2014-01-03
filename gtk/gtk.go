@@ -1278,9 +1278,9 @@ func DialogNew() (*Dialog, error) {
 }
 
 // Run() is a wrapper around gtk_dialog_run().
-func (v *Dialog) Run() int {
+func (v *Dialog) Run() ResponseType {
 	c := C.gtk_dialog_run(v.Native())
-	return int(c)
+	return ResponseType(c)
 }
 
 // Response() is a wrapper around gtk_dialog_response().
